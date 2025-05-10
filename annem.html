@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Anneler Günü</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Open+Sans&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      background: #fff0f5;
+      text-align: center;
+      padding: 20px;
+    }
+
+    h1 {
+      font-family: 'Pacifico', cursive;
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .envelope {
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+    }
+
+    .envelope img {
+      width: 200px;
+      max-width: 80vw;
+      transition: transform 0.3s ease;
+    }
+
+    .letter {
+      position: absolute;
+      top: 30px;
+      left: 50%;
+      transform: translateX(-50%) translateY(20px);
+      width: 90vw;
+      max-width: 400px;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      opacity: 0;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 1s ease, opacity 1s ease, transform 1s ease;
+      z-index: 2;
+    }
+
+    .envelope.open .letter {
+      opacity: 1;
+      max-height: 1000px;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    .letter p {
+      text-align: left;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    .heart {
+      font-size: 1.5rem;
+      color: red;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Anneler Günün Kutlu Olsun! <span class="heart">❤️</span></h1>
+
+  <div class="envelope" onclick="toggleLetter()">
+    <img src="https://i.imgur.com/mrp6b76.png" alt="Zarf" />
+    <div class="letter">
+      <p><strong>Sevgili Annem</strong></p>
+      <p>
+        Bugün senin günün anneciğim, bize <em>sevgiyle</em>, <em>sabırla</em> ve fedakârlıkla her şeyi öğrettin. Teşekkür ederim anneciğim, zor günlerde sığınak olduğun için, yorgunluğun içinde bile bize hediye ettiğin her bir gülümseme için ve her zaman ilham veren gücün için.
+      </p>
+      <p>
+        Bu dünyada senin fedakârlığın ve kalbinle kıyaslanacak hiçbir şey yok. Bugün ve her zaman, seni onurlandırıyor ve her şey için teşekkür ediyorum. Hayatımı daha iyi bir hale getirdiğin için teşekkür ederim.
+      </p>
+      <p>
+        <strong>Anneler Günün Kutlu Olsun!</strong>  <br/>
+        Bolca kalp (ve sevgiyle), <br/>
+        Çok seviyorum anne <span class="heart">❤️</span>
+      </p>
+    </div>
+  </div>
+
+  <script>
+    function toggleLetter() {
+      const envelope = document.querySelector('.envelope');
+      envelope.classList.toggle('open');
+    }
+  </script>
+
+</body>
+</html>
